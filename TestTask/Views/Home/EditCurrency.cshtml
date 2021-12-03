@@ -1,0 +1,30 @@
+﻿@model Currency
+
+    <form method="post">
+        <div>
+            <label>Name</label>
+            <input asp-for="@Model.Name" />
+        </div>
+        <div>
+            <label>EngName</label>
+            <input asp-for="@Model.EngName" />
+        </div>
+        <div>
+            <label>Nominal</label>
+            <input asp-for="@Model.Nominal" />
+        </div>
+        <div>
+            <label>ParentCode</label>
+            <input asp-for="@Model.ParentCode" />
+        </div>
+        <div>
+            <label>ISO_Num_Code</label>
+            <input asp-for="@Model.ISO_Num_Code" />
+        </div>
+        <div>
+            <label>ISO_Char_Code</label>
+            <input asp-for="@Model.ISO_Char_Code" />
+        </div>
+        <button type="submit">Сохранить</button>
+    </form>
+

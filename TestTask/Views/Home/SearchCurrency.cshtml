@@ -1,0 +1,44 @@
+﻿@model List<Currency>
+
+
+<a asp-action="Index">Валюты</a>
+<a asp-action="CurrencyRate">Курс валют</a>
+
+
+<form method="post">
+    <select name="SelectCurrency">
+        @foreach (var item in Model)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    <input type="date" name="GetDate" />
+    <button type="submit">Ок</button>
+</form>
+
+
+@if (ViewBag.Result != null)
+{
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Date</td>
+            <td>NumCode</td>
+            <td>CharCode</td>
+            <td>Nominal</td>
+            <td>Name</td>
+            <td>Value</td>
+        </tr>
+            <tr>
+                <td>@ViewBag.Result.Id</td>
+                <td>@ViewBag.Result.date.ToShortDateString()</td>
+                <td>@ViewBag.Result.currency.ISO_Num_Code</td>
+                <td>@ViewBag.Result.currency.ISO_Char_Code</td>
+                <td>@ViewBag.Result.currency.Nominal</td>
+                <td>@ViewBag.Result.currency.Name</td>
+                <td>@ViewBag.Result.Value</td>
+            </tr>
+    </table>
+}
+
+

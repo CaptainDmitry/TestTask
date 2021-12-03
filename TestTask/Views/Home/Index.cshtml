@@ -1,0 +1,45 @@
+﻿@model List<Currency>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-action="CurrencyRate">Курс валют</a>
+<a asp-action="SearchCurrency">Поиск</a>
+
+@using (Html.BeginForm("LoadCurrency", "Home", FormMethod.Post))
+{
+    <button type="submit" name="Load">Загрузить валюту</button>
+}
+<a asp-action="CreateCurrency">Добавить новую валюту</a>
+
+
+<form method="post">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>EngName</td>
+            <td>Nominal</td>
+            <td>ParentCode</td>
+            <td>ISO_Num_Code</td>
+            <td>ISO_Char_Code</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.EngName</td>
+                <td>@item.Nominal</td>
+                <td>@item.ParentCode</td>
+                <td>@item.ISO_Num_Code</td>
+                <td>@item.ISO_Char_Code</td>
+                <td><a asp-action="EditCurrency" asp-route-id="@item.Id">Изменить</a></td>
+                <td><button type="submit" asp-route-id="@item.Id">Удалить</button></td>
+            </tr>
+        }
+    </table>
+</form>
+
+

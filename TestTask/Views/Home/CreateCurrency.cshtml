@@ -1,0 +1,36 @@
+﻿@model Currency
+
+
+    <form method="post">
+
+        <div>
+            <label>Id</label>
+            <input asp-for="Id" type="text" />
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" asp-for="Name" />
+        </div>
+        <div>
+            <label>EngName</label>
+            <input type="text" asp-for="EngName" />
+        </div>
+        <div>
+            <label>Nominal</label>
+            <input type="number" asp-for="Nominal"/>
+        </div>
+        <div>
+            <label>ParentCode</label>
+            <input type="text" asp-for="ParentCode"/>
+        </div>
+        <div>
+            <label>ISO_Num_Code</label>
+            <input type="number" asp-for="ISO_Num_Code"/>
+        </div>
+        <div>
+            <label>ISO_Char_Code</label>
+            <input type="text" asp-for="ISO_Char_Code"/>
+        </div>
+        <button type="submit">Добавить</button>
+
+    </form>
